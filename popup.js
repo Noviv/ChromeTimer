@@ -6,7 +6,7 @@ var ihtml = "<table>";
 for (var i = 0; i < domains.length; i++) {
 	ihtml += "<tr>";
 	ihtml += "<td>" + domains[i] + "</td>";
-	ihtml += "<td>" + times[i] + "</td>";
+	ihtml += "<td>" + (times[i] / 1000.0) + " secs"  + "</td>";
 	ihtml += "</tr>";
 }
 
