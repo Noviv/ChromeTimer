@@ -1,7 +1,10 @@
 {
 	"manifest_version": 2,
-	"name": "My Cool Extension",
-	"version": "0.1",
+	"name": "TabTimer",
+	"version": "0.0.1",
+	"author": "Matthew Webb",
+	"description": "See how long you spend staring at each website you visit!",
+	
 	"content_scripts": [
 		{
 			"matches": [

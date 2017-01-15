@@ -1,3 +1,5 @@
+alert("Tabs that are already open will not be timed! Please reopen those tabs if you would like to time them.");
+
 var currDomainIdx = null;
 var domains = [];
 var times = [];
@@ -17,24 +19,27 @@ var update = function() {
 				}
 				
 				currDomainIdx = domains.indexOf(response);
-				localStorage.setItem("domains", JSON.stringify(domains));
-				localStorage.setItem("times", JSON.stringify(times));
 			}
 		});
 	});
 };
 
 chrome.tabs.onActivated.addListener(function(activeInfo) {
-	update();
+	update();//udpate when user switches tabs
 });
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-	update();
+	update();//update when a new URL is entered on a tab
 });
+
+update();//start timing on current tab (if not already added)
 
 var lastTime = Date.now();
 setInterval(function() {
 	var currTime = Date.now();
 	times[currDomainIdx] += currTime - lastTime;
 	lastTime = currTime;
+	
+	localStorage.setItem("domains", JSON.stringify(domains));
+	localStorage.setItem("times", JSON.stringify(times));
 }, 0);
