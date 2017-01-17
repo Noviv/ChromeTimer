@@ -3,6 +3,11 @@ setInterval(function() {
 	var times = JSON.parse(localStorage.times);
 
 	var ihtml = "<table>";
+	
+	ihtml += "<tr>";
+	ihtml += "<td>Website</td>";
+	ihtml += "<td>Time spent</td>";
+	ihtml += "</tr>";
 
 	for (var i = 0; i < domains.length; i++) {
 		ihtml += "<tr>";
