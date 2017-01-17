@@ -1,5 +1,3 @@
-alert("Tabs that are already open will not be timed! Please reopen those tabs if you would like to time them.");
-
 var currDomainIdx = null;
 var domains = [];
 var times = [];
