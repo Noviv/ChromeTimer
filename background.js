@@ -30,7 +30,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	update();//update when a new URL is entered on a tab
 });
 
-update();//start timing on current tab (if not already added)
+update();
 
 var lastTime = Date.now();
 setInterval(function() {
